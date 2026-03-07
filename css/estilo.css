@@ -71,7 +71,6 @@ section {
     line-height: 2em;
     padding-left: 30px;
     font-family: var(--fonte3);
-    display: block;
     
 }
 
@@ -82,19 +81,17 @@ section > p {
 }
 
 section.normal > pre {
-    font-size: 2em;
+    font-size: 2.2em;
     color: black;
     font-weight: bolder;
     line-height: 1.0;
-    
 }
 
 section.imagem > pre {
-    font-size: 2em;
+    font-size: 2.wem;
     color: blue;
     font-weight: bolder;
     line-height: 1.0;
-    
 }
 
 
