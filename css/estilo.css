@@ -32,12 +32,12 @@ header {
 header > h1 {
     padding-top: 50px;
     font-variant: small-caps ;
-    font-size: 4vw;
+    font-size: 6vw;
 }
 
 header > p {
     padding-bottom: 50px;
-    font-size: 3.5vw;
+    font-size: 5vw;
     
 }
 
@@ -76,19 +76,19 @@ section {
 
 section > p {
     padding-bottom: 5px;
-    font-size: 3vw;
-    text-indent: 40px;
+   
+    text-indent: 30px;
 }
 
 section.normal > pre {
-    font-size: 2vw;
+    font-size: 2em;
     color: black;
     font-weight: bolder;
     line-height: 1.0;
 }
 
 section.imagem > pre {
-    font-size: 2vw;
+    font-size: 2em;
     color: blue;
     font-weight: bolder;
     line-height: 1.0;
