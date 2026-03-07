@@ -1,145 +1,40 @@
-@charset "UTF-8";
+/* No seu <style>, substitua ou atualize estas partes: */
 
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
-
-:root {
-    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
-    --fonte2: "Passion One", cursive;
-    --fonte3: "Sriracha", cursive;
+header h1 {
+    font-variant: small-caps;
+    /* Aumentado: mínimo 2.5rem, ideal 8vw */
+    font-size: clamp(2.5rem, 8vw, 5rem); 
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+header p {
+    /* Aumentado: mínimo 1.2rem, ideal 4vw */
+    font-size: clamp(1.2rem, 3.5vw, 2.2rem);
 }
 
-html, body {
-    height: 100vh;
-    background-color: darkgrey;
-    font-family: var(--fonte1);
-}
-
-header {
-    background-color: black;
-    color: white;
-    text-align: center;
-    font-family: var(--fonte2);
-   
-}
-
-header > h1 {
-    padding-top: 50px;
-    font-variant: small-caps ;
-    font-size: 6vw;
-}
-
-header > p {
-    padding-bottom: 50px;
-    font-size: 5vw;
-    
-}
-
-header a, footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: bolder;
-}
-
-header a:hover, footer a:hover {
-    text-decoration: underline;
-}
-
-
-section {
-    padding-top: 10vh;
-    padding-bottom: 10vh;
-    line-height: 2em;
-    padding-left: 30px;
+.poema {
+    display: block;
     font-family: var(--fonte3);
-   
-    
-}
-
-section > p {
-    padding-bottom: 5px;
-    text-indent: 30px;
-}
-
-section.normal > pre {
-    color: black;
-    font-weight: bolder;
-    line-height: 1.0;
-    font-size: 3em;
-}
-
-section.imagem > pre {
-    color: blue;
-    font-weight: bolder;
-    line-height: 1.0;
-    font-size: 3em;
-}
-
-
-section.normal > pre, 
-section.imagem > pre {
-    font-size: 3em;          /* Tamanho que você desejar */
-    white-space: pre-wrap;   /* FAZ O TEXTO QUEBRAR LINHA */
-    word-wrap: break-word;   /* Garante que palavras longas não vazem */
-    overflow-x: hidden;      /* Garante que nada saia da lateral */
-}
-
-section.normal {
-    background-color: white;
-    color: black;
-}
-
-section.imagem {
-    background-color: rgb(51, 51, 51);
-    color: white;
-    box-shadow: inset 6px 6px 13px 0px black;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-section.imagem > p {
-    background-color: rgba(0, 0, 0, 0.534);
-    padding: 5px;
-    padding-bottom: 1em;
-   
+    white-space: pre-wrap;
+    /* TEXTO PRINCIPAL AUMENTADO */
+    /* 1.3rem é o mínimo (celular), 2.8vw é o ideal, 2.2rem é o máximo (monitores grandes) */
+    font-size: clamp(1.3rem, 2.8vw, 2.2rem); 
+    margin: 20px 0;
+    word-wrap: break-word;
+    line-height: 1.6em; /* Ajuste para não encavalar as linhas maiores */
 }
 
 span.titulo {
     text-transform: uppercase;
     font-style: italic;
     font-weight: bolder;
-    text-decoration: underline;
+    display: block;
+    margin-bottom: 15px;
+    /* Título do poema um pouco maior que o corpo */
+    font-size: 1.2em; 
+    color: #a52a2a; /* Uma cor de destaque para o título (opcional) */
 }
 
-em.autor {
-text-transform: capitalize;
-color: grey;
-}
-
-/*
-section#img01 {
-    background-image: url('../img/01.jpg');
-    background-position: right center;
-    
-}
-
-
-section#img02 {
-    background-image: url('../img/02.jpg');
-    background-position: right center;
-}
-
-*/
-
-footer {
-    background-color: black;
-    text-align: center;
-    color: white;
-    padding: 10px;
+section {
+    /* Aumentei o padding lateral para o texto largo não encostar nas bordas em monitores UltraWide */
+    padding: 10vh 10vw; 
 }
