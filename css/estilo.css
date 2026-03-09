@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
+/* IMPORTAÇÃO DE FONTES */
+@import url('https://fonts.googleapis.com');
+@import url('https://fonts.googleapis.com');
 
 :root {
     --fonte1: Verdana, Geneva, Tahoma, sans-serif;
@@ -9,39 +10,42 @@
     --fonte3: "Sriracha", cursive;
 }
 
+/* CONFIGURAÇÕES GERAIS */
 * {
     margin: 0;
     padding: 0;
-    font-size: 1em;;
+    box-sizing: border-box;
 }
 
 body {
     background-color: darkgrey;
     font-family: var(--fonte1);
-    margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* CABEÇALHO */
 header {
     background-color: black;
     color: white;
     text-align: center;
     font-family: var(--fonte2);
-   
+    padding: 20px 0;
 }
 
 header > h1 {
-    padding-top: 20px;
-    font-variant: small-caps ;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+    font-variant: small-caps;
+    font-size: clamp(1.5rem, 8vw, 3.5rem);
 }
 
 header > p {
-    padding-bottom: 20px;
-    font-size: clamp(1.0rem, 4vw, 2rem);
-    
+    font-size: clamp(1.0rem, 4vw, 1.5rem);
+    padding-top: 10px;
 }
 
-/* Configuração Geral do Nav */
+/* NAVEGAÇÃO */
 nav {
     background-color: #333;
     padding: 10px;
@@ -49,10 +53,8 @@ nav {
 
 nav ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha no desktop */
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -62,106 +64,73 @@ nav li {
 
 nav a {
     color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    display: block;
+    padding: 8px 15px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     font-size: 0.9em;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 nav a:hover {
     background-color: #ff5722;
 }
 
-/* RESPONSIVIDADE (Telas até 600px) */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column; /* Transforma em lista vertical */
-        align-items: stretch;
-    }
-
-    nav li {
-        margin: 2px 0; /* Ajusta o espaçamento vertical */
-    }
-
-    nav a {
-        text-align: center;
-        padding: 12px; /* Área de toque maior para o dedo */
-    }
+/* SEÇÕES DE TEXTO (FUNDO BRANCO) */
+section.normal {
+    background-color: white;
+    color: black;
+    padding: 10vh 20px;
 }
 
+section.normal > pre, section.imagem > pre {
+    font-family: var(--fonte3);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    white-space: pre-wrap; /* Garante quebras de linha em telas pequenas */
+    margin: auto;
+    width: fit-content;
+}
 
+/* SEÇÕES COM IMAGEM (PARALLAX) */
 section.imagem {
-    position: relative; /* Necessário para posicionar o texto dentro dela */
-    background-image: url('sua-imagem.jpg'); /* Sua imagem de fundo aqui */
-    background-attachment: fixed; /* Cria o efeito "parallax" ao rolar */
+    background-color: #333; /* Fundo reserva */
+    background-attachment: fixed;
     background-size: cover;
     background-position: center center;
-    padding: 50px 0; /* Espaço para o texto não colar nas bordas */
-    min-height: 100vh;
-    
+    padding: 10vh 20px;
+    box-shadow: inset 6px 6px 15px rgba(0, 0, 0, 0.5);
 }
 
 section.imagem > pre {
-    display: block;
-    width: fit-content; /* Ajusta o fundo ao tamanho do texto */
-    margin: auto;       /* Centraliza horizontalmente */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para dar leitura */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    padding: 20px;
     border-radius: 10px;
-    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
+/* IDS ESPECÍFICOS PARA IMAGENS */
 #img01 {
     background-image: url('../img/01[capa].jpg');
-    background-repeat: no-repeat;
-    min-height: auto;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
 }
 
-section.normal {
-    position: relative; /* Necessário para posicionar o texto dentro dela */
-    background-image: url('sua-imagem.jpg'); /* Sua imagem de fundo aqui */
-    background-attachment: fixed; /* Cria o efeito "parallax" ao rolar */
-    background-size: cover;
-    background-position: center center;
-    padding: 50px 0; /* Espaço para o texto não colar nas bordas */
-    min-height: 100vh;
-    
+#img02 {
+    background-image: url('../img/02[cordel].jpg');
 }
 
-section.normal > pre {
-    display: block;
-    width: fit-content; /* Ajusta o fundo ao tamanho do texto */
-    margin: auto;       /* Centraliza horizontalmente */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para dar leitura */
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    border-radius: 10px;
-    font-size: 2rem;
-}
-
+/* CLASSES DE ESTILO PARA TEXTO */
 span.titulo {
-   font-family: 'Times New Roman', Times, serif;
-   font-style: italic;
-   font-variant: small-caps;
-   text-transform: capitalize;
-   color: lightblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-variant: small-caps;
+    color: lightblue;
 }
 
 em.autor {
     font-style: italic;
-    text-transform: lowercase;
     text-transform: capitalize;
     color: lightslategray;
     float: right;
+    margin-top: 10px;
 }
 
 em.home {
@@ -171,6 +140,20 @@ em.home {
     font-variant: small-caps;
 }
 
-a {
-    text-decoration: none;
+/* RESPONSIVIDADE (MOBILE) */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 15px;
+    }
+
+    /* Em celulares, o efeito fixed pode bugar, opcional remover: */
+    section.imagem {
+        background-attachment: scroll;
+    }
 }
