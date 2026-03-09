@@ -60,7 +60,7 @@ section {
 }
 
 section > pre {
-    font-size: 2rem;
+    font-size: 1.2rem;
     white-space: pre-wrap;  
     line-height: 1.2;  
     overflow: hidden;
