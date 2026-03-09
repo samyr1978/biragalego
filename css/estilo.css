@@ -83,10 +83,10 @@ section.normal {
 section.imagem {
     color: white;
     background-color: rgb(29, 26, 28);
-    background-size: cover; /* MUDOU AQUI: preenche tudo */
+    background-size: contain; /* MUDOU AQUI: preenche tudo */
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center center; /* Centraliza a imagem */
+    background-position: left center; /* Centraliza a imagem */
     
     /* Garante que o texto fique legível e espaçado dentro da div */
     display: flex;
