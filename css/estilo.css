@@ -107,13 +107,13 @@ section.imagem {
 section.imagem > pre {
     display: block;
     width: fit-content; /* Ajusta o fundo ao tamanho do texto */
-    margin: auto;       /* Centraliza horizontalmente */
+    margin-left: 10px;       /* Centraliza horizontalmente */
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para dar leitura */
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     border-radius: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 section.normal {
