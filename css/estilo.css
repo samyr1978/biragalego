@@ -60,13 +60,7 @@ section {
 }
 
 section > pre {
-    font-size: 1rem;
-    white-space: pre-wrap;  
-    line-height: 1.2;  
-    overflow: hidden;
-    word-wrap: break-word;
-    width: fit-content;
-    margin-left: 100px;
+   font-size: 2rem;
 }
 
 .home > a {
