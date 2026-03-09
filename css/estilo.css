@@ -116,6 +116,15 @@ section.imagem > pre {
     font-size: 2rem;
 }
 
+#img01 {
+    background-image: url('../img/01[capa].jpg');
+    background-repeat: no-repeat;
+    min-height: auto;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
 section.normal {
     position: relative; /* Necessário para posicionar o texto dentro dela */
     background-image: url('sua-imagem.jpg'); /* Sua imagem de fundo aqui */
@@ -155,3 +164,13 @@ em.autor {
     float: right;
 }
 
+em.home {
+    font-style: normal;
+    font-size: 1.5rem;
+    color: rgb(204, 124, 20);
+    font-variant: small-caps;
+}
+
+a {
+    text-decoration: none;
+}
