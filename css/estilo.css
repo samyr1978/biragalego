@@ -150,4 +150,7 @@ footer {
     nav ul {
         column-count: 1;
     }
+    section.imagem {
+        height: 300px;
+    }
 }
