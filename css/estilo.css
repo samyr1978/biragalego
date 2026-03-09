@@ -57,12 +57,15 @@ section.imagem {
     padding-bottom: 1.5vh;
     background-color: rgb(226, 216, 198);
     width: 100%;
+    float: left;
 }
 
 section.imagem > pre {
-    color: black;
-    font-size: 1.5em;
-    
+    float: left;
+    width: 50%;           /* Ou a largura que você desejar */
+    white-space: pre-wrap; /* MÁGICA: Mantém espaços, mas quebra linha se não couber */
+    word-wrap: break-word; /* Garante que palavras gigantes não quebrem o layout */
+    overflow-x: auto;      /* Adiciona barra de rolagem se algo ainda assim sair */
 }
 
 section.normal {
