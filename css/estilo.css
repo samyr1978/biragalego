@@ -66,7 +66,7 @@ section > pre {
     overflow: hidden;
     word-wrap: break-word;
     width: fit-content;
-    margin: auto;
+    margin-left: 100px;
 }
 
 .home > a {
