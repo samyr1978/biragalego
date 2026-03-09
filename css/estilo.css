@@ -40,13 +40,10 @@ header > p {
     
 }
 
-nav {
-    
-}
 
 nav ul {
     column-count: 6;
-    column-gap: 20px;
+    column-gap: 10px;
     list-style-position: inside;
     list-style: none;
 }
@@ -60,13 +57,13 @@ section {
 }
 
 section > pre {
-    font-size: 1.5rem;
+    font-size: 1rem;
     white-space: pre-wrap;  
     line-height: 1.2;  
     overflow: hidden;
     word-wrap: break-word;
     margin-left: 1em;
-    font-weight: bolder;
+    font-weight: bold;
     
 }
 
