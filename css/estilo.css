@@ -1,77 +1,146 @@
-@charset "UTF-8";
-
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&family=Sriracha&display=swap');
-
-:root {
-    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
-    --fonte2: "Passion One", cursive;
-    --fonte3: "Sriracha", cursive;
-}
-
+/* Configurações Globais */
 * {
     margin: 0;
     padding: 0;
-    font-size: 1em;;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-principal: #2c3e50;
+    --cor-destaque: #e74c3c;
+    --cor-fundo: #f4f4f4;
+    --cor-texto: #333;
+    --fonte-poema: 'Georgia', serif;
 }
 
 body {
-    background-color: darkgrey;
-    font-family: var(--fonte1);
-    margin: 0;
+    background-color: var(--cor-fundo);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
 }
 
+/* Header */
 header {
-    background-color: black;
+    background-color: var(--cor-principal);
     color: white;
     text-align: center;
-    font-family: var(--fonte2);
-   
+    padding: 2rem 1rem;
 }
 
-header > h1 {
-    padding-top: 20px;
-    font-variant: small-caps ;
-    font-size: clamp(1.5rem, 5vw, 3rem);
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
-header > p {
-    padding-bottom: 20px;
-    font-size: clamp(1.0rem, 4vw, 2rem);
-    
-}
-
+/* Menu de Navegação (Sumário) */
 nav {
+    max-width: 1000px;
+    margin: 20px auto;
     padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 nav ul {
-    column-count: 6;
-    column-gap: 20px;
-    list-style-position: inside;
     list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Faz os itens quebrarem linha */
+    gap: 10px;
 }
 
+nav li {
+    flex: 1 1 200px; /* Base de 200px, cresce conforme necessário */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-principal);
+    font-size: 0.9rem;
+    display: block;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+    padding-left: 10px;
+}
+
+/* Estilização dos Poemas */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background: white;
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Diferenciação visual para seções "imagem" (exemplo de estilo) */
 section.imagem {
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
-    background-color: rgb(226, 216, 198);
-    width: 100%;
-    float: left;
+    border-left: 5px solid var(--cor-destaque);
+    background-color: #fffaf0;
 }
 
-section.imagem > pre {
-    float: left;
-    width: 50%;           /* Ou a largura que você desejar */
-    white-space: pre-wrap; /* MÁGICA: Mantém espaços, mas quebra linha se não couber */
-    word-wrap: break-word; /* Garante que palavras gigantes não quebrem o layout */
-    overflow-x: auto;      /* Adiciona barra de rolagem se algo ainda assim sair */
+pre {
+    font-family: var(--fonte-poema);
+    white-space: pre-wrap; /* Mantém espaços mas quebra linha no mobile */
+    word-wrap: break-word;
+    font-size: 1.1rem;
+    color: #444;
 }
 
-section.normal {
-   padding-top: 1.2vh;
-   padding-bottom: 1.2vh;
-   background-color: white
+.titulo {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+    text-align: center;
 }
 
+.autor {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #777;
+    text-align: right;
+}
 
+.home {
+    display: inline-block;
+    margin-top: 15px;
+    font-style: normal;
+    font-size: 0.8rem;
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: var(--cor-principal);
+}
+
+/* Responsividade (Telas menores que 600px) */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav li {
+        flex: 1 1 100%; /* Em celulares, um link por linha */
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    pre {
+        font-size: 1rem;
+    }
+}
