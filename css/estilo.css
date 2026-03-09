@@ -148,8 +148,8 @@ footer {
     padding: 10px;
 }
 
-@media (max-width: 600px) {
-    #sumario ul {
+@media (max-width: 768px) {
+    nav ul {
         column-count: 1;
     }
 }
