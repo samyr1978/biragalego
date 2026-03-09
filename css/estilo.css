@@ -83,20 +83,34 @@ section.normal {
 section.imagem {
     color: white;
     background-color: rgb(29, 26, 28);
-    background-size: contain; /* MUDOU AQUI: preenche tudo */
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: left center; /* Centraliza a imagem */
+    background-size: cover;
     
-    /* Garante que o texto fique legível e espaçado dentro da div */
+    /* Troque 'fixed' por 'scroll' em telas menores se der erro, 
+       ou use 'scroll' como padrão para evitar bugs mobile */
+    background-attachment: scroll; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* Centraliza horizontalmente o conteúdo */
+    text-align: center;  /* Garante que o texto não cole nas bordas */
     
-    min-height: 80vh; /* Recomendo min-height em vez de height fixo */
     width: 100%;
-    
+    min-height: 80vh; /* Mantém a altura baseada na tela */
+    padding: 20px;    /* Respiro crucial para o texto em telas pequenas */
+    box-sizing: border-box;
 }
+
+/* Media Query para telas pequenas */
+@media (max-width: 768px) {
+    section.imagem {
+        min-height: 50vh; /* Reduz a altura em celulares para não ocupar tudo */
+        background-attachment: scroll; /* Obrigatório para performance mobile */
+    }
+}
+
 
 #img01, #img02, #img03 {
     background-image: url('../img/01[capa].jpg');
