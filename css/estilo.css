@@ -41,127 +41,34 @@ header > p {
     
 }
 
-/* Configuração Geral do Nav */
 nav {
-    background-color: #333;
-    padding: 10px;
+    padding: 20px;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap; /* Permite quebrar linha no desktop */
-    justify-content: center;
+    column-count: 6;
+    column-gap: 20px;
+    list-style-position: inside;
+    list-style: none;
 }
-
-nav li {
-    margin: 5px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    display: block;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    font-size: 0.9em;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background-color: #ff5722;
-}
-
-/* RESPONSIVIDADE (Telas até 600px) */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column; /* Transforma em lista vertical */
-        align-items: stretch;
-    }
-
-    nav li {
-        margin: 2px 0; /* Ajusta o espaçamento vertical */
-    }
-
-    nav a {
-        text-align: center;
-        padding: 12px; /* Área de toque maior para o dedo */
-    }
-}
-
 
 section.imagem {
-    position: relative; /* Necessário para posicionar o texto dentro dela */
-    background-image: url('sua-imagem.jpg'); /* Sua imagem de fundo aqui */
-    background-attachment: fixed; /* Cria o efeito "parallax" ao rolar */
-    background-size: cover;
-    background-position: center center;
-    padding: 50px 0; /* Espaço para o texto não colar nas bordas */
-    min-height: 100vh;
-    
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    background-color: rgb(226, 216, 198);
+    width: 100%;
 }
 
 section.imagem > pre {
-    display: block;
-    width: fit-content; /* Ajusta o fundo ao tamanho do texto */
-    margin-left: 10px;       /* Centraliza horizontalmente */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para dar leitura */
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    border-radius: 10px;
-    font-size: 1.5rem;
-}
-
-section.normal {
-    position: relative; /* Necessário para posicionar o texto dentro dela */
-    background-image: url('sua-imagem.jpg'); /* Sua imagem de fundo aqui */
-    background-attachment: fixed; /* Cria o efeito "parallax" ao rolar */
-    background-size: cover;
-    background-position: center center;
-    padding: 50px 0; /* Espaço para o texto não colar nas bordas */
-    min-height: 100vh;
+    color: black;
+    font-size: 1.5em;
     
 }
 
-section.normal > pre {
-    display: block;
-    width: fit-content; /* Ajusta o fundo ao tamanho do texto */
-    margin: auto;       /* Centraliza horizontalmente */
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para dar leitura */
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    border-radius: 10px;
-    font-size: 2rem;
+section.normal {
+   padding-top: 1.2vh;
+   padding-bottom: 1.2vh;
+   background-color: white
 }
 
-span.titulo {
-   font-family: 'Times New Roman', Times, serif;
-   font-style: italic;
-   font-variant: small-caps;
-   text-transform: capitalize;
-   color: lightblue;
-}
 
-em.autor {
-    font-style: italic;
-    text-transform: lowercase;
-    text-transform: capitalize;
-    color: lightslategray;
-    float: right;
-}
-
-em.home {
-    font-style: normal;
-    font-size: 1.5rem;
-    color: rgb(204, 124, 20);
-    font-variant: small-caps;
-}
-
-a  .home {
-    text-decoration: none;
-}
