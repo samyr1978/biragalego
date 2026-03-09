@@ -113,12 +113,45 @@ section.imagem > pre {
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     border-radius: 10px;
+    font-size: 2rem;
 }
 
 section.normal {
-   padding-top: 1.2vh;
-   padding-bottom: 1.2vh;
-   background-color: white
+    position: relative; /* Necessário para posicionar o texto dentro dela */
+    background-image: url('sua-imagem.jpg'); /* Sua imagem de fundo aqui */
+    background-attachment: fixed; /* Cria o efeito "parallax" ao rolar */
+    background-size: cover;
+    background-position: center center;
+    padding: 50px 0; /* Espaço para o texto não colar nas bordas */
+    min-height: 100vh;
+    
 }
 
+section.normal > pre {
+    display: block;
+    width: fit-content; /* Ajusta o fundo ao tamanho do texto */
+    margin: auto;       /* Centraliza horizontalmente */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para dar leitura */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    font-size: 2rem;
+}
+
+span.titulo {
+   font-family: 'Times New Roman', Times, serif;
+   font-style: italic;
+   font-variant: small-caps;
+   text-transform: capitalize;
+   color: lightblue;
+}
+
+em.autor {
+    font-style: italic;
+    text-transform: lowercase;
+    text-transform: capitalize;
+    color: lightslategray;
+    float: right;
+}
 
