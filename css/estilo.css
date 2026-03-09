@@ -40,10 +40,13 @@ header > p {
     
 }
 
+nav {
+    
+}
 
 nav ul {
     column-count: 6;
-    column-gap: 10px;
+    column-gap: 20px;
     list-style-position: inside;
     list-style: none;
 }
@@ -57,13 +60,12 @@ section {
 }
 
 section > pre {
-    font-size: 1rem;
+    font-size: 2rem;
     white-space: pre-wrap;  
     line-height: 1.2;  
     overflow: hidden;
     word-wrap: break-word;
     margin-left: 1em;
-    font-weight: bold;
     
 }
 
@@ -86,14 +88,12 @@ section.imagem {
     background-size: cover; /* MUDOU AQUI: preenche tudo */
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center; /* Centraliza a imagem */
+    background-position: center center; /* Centraliza a imagem */
     
     /* Garante que o texto fique legível e espaçado dentro da div */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 100%;
-    height: 50vh;
     
     min-height: 80vh; /* Recomendo min-height em vez de height fixo */
     width: 100%;
@@ -148,11 +148,8 @@ footer {
     padding: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     nav ul {
         column-count: 1;
-    }
-    section.imagem {
-        height: 300px;
     }
 }
