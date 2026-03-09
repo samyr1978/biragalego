@@ -29,13 +29,13 @@ header {
 }
 
 header > h1 {
-    padding-top: 40px;
+    padding-top: 20px;
     font-variant: small-caps ;
     font-size: clamp(1.5rem, 5vw, 3rem);
 }
 
 header > p {
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     font-size: clamp(1.0rem, 4vw, 2rem);
     
 }
@@ -44,7 +44,12 @@ nav {
     
 }
 
-
+nav ul {
+    column-count: 6;
+    column-gap: 20px;
+    list-style-position: inside;
+    list-style: none;
+}
 
 section {
     padding-top: 1.2vh;
@@ -55,13 +60,20 @@ section {
 }
 
 section > pre {
-    font-size: 1rem;
+    font-size: 2rem;
     white-space: pre-wrap;  
     line-height: 1.2;  
     overflow: hidden;
     word-wrap: break-word;
     margin-left: 1em;
     
+}
+
+.home > a {
+    color: blue;
+    font-style: italic;
+    font-size: 1.5em;
+    text-decoration: none;
 }
 
 section.normal {
@@ -73,10 +85,24 @@ section.normal {
 section.imagem {
     color: white;
     background-color: rgb(29, 26, 28);
-    background-size: cover;
+    background-size: cover; /* MUDOU AQUI: preenche tudo */
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center; /* Centraliza a imagem */
+    
+    /* Garante que o texto fique legível e espaçado dentro da div */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    min-height: 80vh; /* Recomendo min-height em vez de height fixo */
+    width: 100%;
     
 }
+
+#img01, #img02, #img03 {
+    background-image: url('../img/01[capa].jpg');
+} 
 
 section.imagem > p {
     padding: 5px;
@@ -94,6 +120,10 @@ span.titulo {
 em.autor {
 text-transform: capitalize;
 color: grey;
+font-style: italic;
+font-size: 1.2rem;
+display: block;
+text-align: center;
 }
 
 /*
@@ -116,4 +146,10 @@ footer {
     text-align: center;
     color: white;
     padding: 10px;
+}
+
+@media (max-width: 600px) {
+    #sumario ul {
+        column-count: 1;
+    }
 }
