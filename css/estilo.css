@@ -15,9 +15,10 @@
     font-size: 1em;;
 }
 
-html, body {
+body {
     background-color: darkgrey;
     font-family: var(--fonte1);
+    margin: 0;
 }
 
 header {
@@ -40,110 +41,84 @@ header > p {
     
 }
 
+/* Configuração Geral do Nav */
 nav {
-    
-}
-
-nav ul {
-    column-count: 6;
-    column-gap: 20px;
-    list-style-position: inside;
-    list-style: none;
-}
-
-section {
-    padding-top: 1.2vh;
-    padding-bottom: 1.2vh;
-    font-family: var(--fonte3);
-    max-width: 100%;
-    
-}
-
-section > pre {
-   font-size: 2rem;
-}
-
-.home > a {
-    color: blue;
-    font-style: italic;
-    font-size: 1.5em;
-    text-decoration: none;
-}
-
-section.normal {
-    color: black;
-    background-color: white;
-    
-}
-
-section.imagem {
-    color: white;
-    background-color: rgb(29, 26, 28);
-    background-size: cover; /* MUDOU AQUI: preenche tudo */
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center; /* Centraliza a imagem */
-    
-    /* Garante que o texto fique legível e espaçado dentro da div */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-    min-height: 80vh; /* Recomendo min-height em vez de height fixo */
-    width: 100%;
-    
-}
-
-#img01, #img02, #img03 {
-    background-image: url('../img/01[capa].jpg');
-} 
-
-section.imagem > p {
-    padding: 5px;
-    padding-bottom: 1em;
-   
-}
-
-span.titulo {
-    text-transform: uppercase;
-    font-style: italic;
-    font-weight: bolder;
-    text-decoration: underline;
-}
-
-em.autor {
-text-transform: capitalize;
-color: grey;
-font-style: italic;
-font-size: 1.2rem;
-display: block;
-text-align: center;
-}
-
-/*
-section#img01 {
-    background-image: url('../img/01.jpg');
-    background-position: right center;
-    
-}
-
-
-section#img02 {
-    background-image: url('../img/02.jpg');
-    background-position: right center;
-}
-
-*/
-
-footer {
-    background-color: black;
-    text-align: center;
-    color: white;
+    background-color: #333;
     padding: 10px;
 }
 
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha no desktop */
+    justify-content: center;
+}
+
+nav li {
+    margin: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #ff5722;
+}
+
+/* RESPONSIVIDADE (Telas até 600px) */
 @media (max-width: 600px) {
     nav ul {
-        column-count: 1;
+        flex-direction: column; /* Transforma em lista vertical */
+        align-items: stretch;
+    }
+
+    nav li {
+        margin: 2px 0; /* Ajusta o espaçamento vertical */
+    }
+
+    nav a {
+        text-align: center;
+        padding: 12px; /* Área de toque maior para o dedo */
     }
 }
+
+
+section.imagem {
+    position: relative; /* Necessário para posicionar o texto dentro dela */
+    background-image: url('sua-imagem.jpg'); /* Sua imagem de fundo aqui */
+    background-attachment: fixed; /* Cria o efeito "parallax" ao rolar */
+    background-size: cover;
+    background-position: center center;
+    padding: 50px 0; /* Espaço para o texto não colar nas bordas */
+    min-height: 100vh;
+    
+}
+
+section.imagem > pre {
+    display: block;
+    width: fit-content; /* Ajusta o fundo ao tamanho do texto */
+    margin: auto;       /* Centraliza horizontalmente */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para dar leitura */
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    border-radius: 10px;
+}
+
+section.normal {
+   padding-top: 1.2vh;
+   padding-bottom: 1.2vh;
+   background-color: white
+}
+
+
